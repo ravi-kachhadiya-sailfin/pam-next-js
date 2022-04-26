@@ -118,7 +118,7 @@ const FAQPage = ({ title, banner }) => {
         <AnswerTitleText className="mb">To make a gift online:</AnswerTitleText>
 
         <UL className="mb">
-          {[<div>Go to: <a href="https://medicalgiving.stanford.edu/" className="text-underline" target="https://medicalgiving.stanford.edu/">medicalgiving.stanford.edu</a></div>,
+          {[<div key={"url-link-mail"}>Go to: <a href="https://medicalgiving.stanford.edu/" className="text-underline" target="https://medicalgiving.stanford.edu/">medicalgiving.stanford.edu</a></div>,
             "Click on the blue “make a gift” tab in the upper right bar",
             "In the special instructions/other designation box, note: This gift is intended to support Pause a Moment (PAM), in the Department of Psychiatry and Behavioral Sciences.",
             "Then follow the prompts.",
@@ -137,7 +137,7 @@ const FAQPage = ({ title, banner }) => {
           {["Please make your check payable to Stanford University",
             "In the memo line, indicate Pause a Moment (PAM), Psychiatry",
             "Also include a note that includes: This gift is intended to support Pause a Moment (PAM), in the Department of Psychiatry and Behavioral Sciences.",
-            <AnswerTitleText>Mail to:</AnswerTitleText>
+            <AnswerTitleText key={"mail-to"}>Mail to:</AnswerTitleText>
           ].map((item, index, arr) => {
             return (
               <li key={index} className={arr.length - 1 === index && "last-child"}>
@@ -226,11 +226,11 @@ const FAQPage = ({ title, banner }) => {
   return (
     <FAQSectionWrapper>
       <HeaderBanner />
-      <div class="container">
-        <div class="panel-group" id="accordion">
+      <div className="container">
+        <div className="panel-group" id="accordion">
           {questions.map((qt, i) => {
-            return <div class="panel faq-panel">
-              <div class="panel-heading"
+            return <div className="panel faq-panel" key={`${qt}-${i}`}>
+              <div className="panel-heading"
                 onClick={() => {
                   if (expandFAQ === i + 1)
                     setExpandFAQ(0);
@@ -238,13 +238,13 @@ const FAQPage = ({ title, banner }) => {
                     setExpandFAQ(i + 1);
                   scrollToAccordion(i);
                 }}>
-                <h4 class="panel-title"
+                <h4 className="panel-title"
                   aria-expanded={expandFAQ === i + 1}
                   aria-disabled="false"
                   aria-controls={`panel${i}-content`}
                   id={`accordion${i}-content`}
                   role="button"
-                  tabindex={i}
+                  tabIndex={i}
                 >
                   <QuestionText>
                     <a
@@ -261,7 +261,7 @@ const FAQPage = ({ title, banner }) => {
                 </h4>
               </div>
               <div
-                class={
+                className={
                   expandFAQ === i + 1
                     ? "panel-collapse collapse in"
                     : "panel-collapse collapse"
@@ -271,7 +271,7 @@ const FAQPage = ({ title, banner }) => {
                 role="region"
                 hidden=""
               >
-                <div class="panel-body" >
+                <div className="panel-body" >
                   {qt.answer}
                 </div>
               </div>

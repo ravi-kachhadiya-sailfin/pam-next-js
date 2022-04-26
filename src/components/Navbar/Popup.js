@@ -66,7 +66,7 @@ const PopUp = (props) => {
                 <AnswerTitleText className="mb">To make a gift online:</AnswerTitleText>
 
                 <UL className="mb">
-                  {[<div>Go to: <a href="https://medicalgiving.stanford.edu/">medicalgiving.stanford.edu</a></div>,
+                  {[<div key={"url-0"}>Go to: <a href="https://medicalgiving.stanford.edu/">medicalgiving.stanford.edu</a></div>,
                     "Click on the blue “make a gift” tab in the upper right bar",
                     "In the special instructions/other designation box, note: This gift is intended to support Pause a Moment (PAM), in the Department of Psychiatry and Behavioral Sciences.",
                     "Then follow the prompts.",
@@ -85,7 +85,7 @@ const PopUp = (props) => {
                   {["Please make your check payable to Stanford University",
                     "In the memo line, indicate Pause a Moment (PAM), Psychiatry",
                     "Also include a note that includes: This gift is intended to support Pause a Moment (PAM), in the Department of Psychiatry and Behavioral Sciences.",
-                    <AnswerTitleText>Mail to:</AnswerTitleText>
+                    <AnswerTitleText key={"mail-to"}>Mail to:</AnswerTitleText>
                   ].map((item, index, arr) => {
                     return (
                       <li key={index} className={arr.length - 1 === index && "last-child"}>

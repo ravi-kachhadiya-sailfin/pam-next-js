@@ -44,7 +44,7 @@ const HeaderBanner = (props) => {
             {/* <img className="TAM-Hero" alt="FAQs" src={headerImg} /> */}
             <div className="TAM-Hero" >
               {(browser === "safari" || OS === "MacOS") ?
-                <img class="TAM-Hero TAM-Hero-login safari-img-faq" src={LottieGif} alt={"faq"} />
+                <img className="TAM-Hero TAM-Hero-login safari-img-faq" src={LottieGif} alt={"faq"} />
                 :
                 <lottie-player
                   id="firstLottie"
