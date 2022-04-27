@@ -2,12 +2,12 @@ import { useContext, useState, useEffect } from 'react';
 import propTypes from "prop-types";
 import { useHistory } from 'react-router-dom';
 
-import NavBar from "../../../src/components/navbar/NavBar";
-import Footer from "../../../src/components/footer/Footer";
+import NavBar from "src/components/navbar/NavBar";
+import Footer from "src/components/footer/Footer";
 
-import { AppStoreContext } from "../../../src/providers/AppStoreProvider";
-import { ROUTES } from '../../../src/Routes';
-import { userAuth, logOut } from '../../../src/common/commonFunction';
+import { AppStoreContext } from "src/providers/AppStoreProvider";
+import { ROUTES } from 'src/Routes';
+import { userAuth, logOut } from 'src/common/commonFunction';
 import { validateUserSession } from "../../../pages/api/auth";
 
 import { UserContext } from "src/providers/UserInfo";
