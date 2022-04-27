@@ -2,10 +2,10 @@ import React, { useRef, useState } from 'react';
 import { HeaderSection, HeaderBannerContainerWrapper } from './HeaderBanner.styles';
 import Image from 'next/image'
 // import headerImg from 'app/shared/assets/images/FAQs.png';
-import headerBgImg from 'app/shared/assets/images/FAQs Light bg.png';
+import headerBgImg from 'src/assets/images/FAQs_light_bg.png';
 
 import { BrowserDetect, OSDetect } from 'app/shared/Utils/index';
-// import LottieGif from "app/shared/assets/images/lottie_gifs/FAQ_header.gif";
+import LottieGifHeader from "src/assets/images/lottie_gifs/FAQ_header.gif";
 // import faqBgImg from 'app/shared/assets/images/faq-shape.svg';
 
 // import "../../shared/assets/css/owl.carousel.min.css";
@@ -18,12 +18,17 @@ import { BrowserDetect, OSDetect } from 'app/shared/Utils/index';
 const HeaderBanner = (props) => {
   const ref = useRef(null);
   const [LottieGif, setImage] = useState()
-  const [browser] = useState(BrowserDetect());
-  const [OS] = useState(OSDetect());
+  const [browser, setBrowser] = useState();
+  const [OS, setOS] = useState();
 
   React.useEffect(() => {
+    const tempBrowser = BrowserDetect();
+    const tempOS = OSDetect();
+    setBrowser(tempBrowser);
+    setBrowser(tempOS);
+
     if (browser === "safari" || OS === "MacOS") {
-      import("app/shared/assets/images/lottie_gifs/FAQ_header.gif").then((img) => setImage(img.default))
+      setImage(LottieGifHeader.src)
     } else {
       import("@lottiefiles/lottie-player");
     }
@@ -41,11 +46,11 @@ const HeaderBanner = (props) => {
             </div>
           </div>
           <div className="faq_image">
-            <Image className="TAM-Hero_bg" alt="FAQs" src={headerBgImg} />
-            {/* <Image className="TAM-Hero" alt="FAQs" src={headerImg} /> */}
+            <img className="TAM-Hero_bg" alt="FAQs" src={headerBgImg.src} />
+            {/* <img className="TAM-Hero" alt="FAQs" src={headerImg.src} /> */}
             <div className="TAM-Hero" >
               {(browser === "safari" || OS === "MacOS") ?
-                <Image className="TAM-Hero TAM-Hero-login safari-img-faq" src={LottieGif} alt={"faq"} />
+                <img className="TAM-Hero TAM-Hero-login safari-img-faq" src={LottieGif.src} alt={"faq"} />
                 :
                 <lottie-player
                   id="firstLottie"

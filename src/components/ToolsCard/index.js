@@ -94,7 +94,7 @@ const ToolsCard = (props) => {
           <CardTag>New</CardTag>
           {(cardData && (cardData.videoLink && cardData.videoLink !== "null")) &&
             <CardPlayIcon>
-              <Image src={playIcon} onClick={() => navigateToDetail(cardData, history, cardData.id, ROUTES)} alt="play-icon" height="100%" width="100%" />
+              <img src={playIcon.src} onClick={() => navigateToDetail(cardData, history, cardData.id, ROUTES)} alt="play-icon" height="100%" width="100%" />
             </CardPlayIcon>
           }
           <CardMedia className="tool-img" component="img" alt={cardData.title || ""} onError={imagePlaceholder} image={cardData.thumbnailImage ? cardData.thumbnailImage : cardImage} onClick={() => navigateToDetail(cardData, history, cardData.id, ROUTES)} />
@@ -135,20 +135,20 @@ const ToolsCard = (props) => {
               <Box item className="share-tool">
                 <NormalTooltip title="Share">
                   <CardIconButton aria-label="share a tool" onClick={() => { openSharing() }} className={`tool-card ${props.className}`}>
-                    <Image src={shareOutlinedImage} className="share-icon" alt="Share icon" height="28" />
+                    <img src={shareOutlinedImage.src} className="share-icon" alt="Share icon" height="28" />
                   </CardIconButton>
                 </NormalTooltip>
 
                 <NormalTooltip title="Calendar">
                   <CardIconButton className={`tool-card ${props.className}`} aria-label="calendar" onClick={() => { setHasReminder(!hasReminder) }}>
-                    <Image src={calendarCheckedImage} className="calendar-icon" alt="calendar icon" height="28" />
+                    <img src={calendarCheckedImage.src} className="calendar-icon" alt="calendar icon" height="28" />
                   </CardIconButton>
                 </NormalTooltip>
 
                 <NormalTooltip title="Favorite">
                   <CardIconButton className={`tool-card ${props.className}`} aria-label="favorite" onClick={() => updateFav()}>
                     {isFavourite === false ? (
-                      <Image src={heartOutlinedImage} alt="favorite icon" className="heart-icon" height="28" />
+                      <img src={heartOutlinedImage.src} alt="favorite icon" className="heart-icon" height="28" />
                     ) : (
                       <i className="fa fa-heart favorite-icon"></i>
                     )}

@@ -38,7 +38,7 @@ const TextPopUp = (props) => {
             tabIndex={-1}
           >
             <Box textAlign="right" className="donate-img">
-              <Image onClick={() => { handleClose() }} src={popup_close} alt="popup close" />
+              <img onClick={() => { handleClose() }} src={popup_close.src} alt="popup close" />
               <CancelButton onClick={() => { handleClose() }}>
               </CancelButton>
             </Box>

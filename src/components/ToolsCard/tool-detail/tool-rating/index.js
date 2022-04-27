@@ -111,7 +111,7 @@ const ToolRating = ({ userRating, updateUserRating, ...props }) => {
     <ContentWrapper className="tool_rating_popup">
       <Box textAlign="right">
         <CancelButton className="tool_rating_close" onClick={props.onClose}>
-          <Image src={popup_close} alt="popup close" />
+          <img src={popup_close.src} alt="popup close" />
         </CancelButton>
       </Box>
 

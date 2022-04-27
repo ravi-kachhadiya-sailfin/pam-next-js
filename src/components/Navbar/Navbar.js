@@ -392,7 +392,7 @@ const NavBar = (props) => {
                     width: "100%",
                 }}
             >
-                <DefaultNavBar>
+                <DefaultNavBar className="">
                     <div className="container-fluid">
                         <div className="header_wrapper">
                             <div className="navbar-header">
@@ -403,20 +403,20 @@ const NavBar = (props) => {
                                     <span className="icon-bar" />
                                 </NavBarButton>
                                 <NavBarBrand>
-                                    <Image src={logo1} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
-                                    <Image className="mobile-logo" src={logomobile} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
+                                    <img src={logo1.src} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
+                                    <img className="mobile-logo" src={logomobile.src} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
                                 </NavBarBrand>
                                 <NavBarSubBrand>
-                                    <Image src={stanfordMedLogo} alt="Stanford medicine" />
+                                    <img src={stanfordMedLogo.src} alt="Stanford medicine" />
                                 </NavBarSubBrand>
                                 <div className="search_btn_donate">
                                     <NavBarDonateButtonMobile onClick={handleDonate} className={openSearchBar && "donate_hide"}>
-                                        <Image src={heart} alt="PAM Pause A Moment" />
+                                        <img src={heart.src} alt="PAM Pause A Moment" />
                                         Donate</NavBarDonateButtonMobile>
                                     <NavBarSearchMobile className={openSearchBar && "search-box"}>
-                                        {!openSearchBar ? <Image src={search} alt="search" onClick={() => { setSearchBar(true) }} />
+                                        {!openSearchBar ? <img src={search.src} alt="search" onClick={() => { setSearchBar(true) }} />
                                             : <> <input className="mobile_search" type="search" onKeyUp={(e) => { if (e.keyCode === 13) { submitSearch() } }} value={text} onChange={(e) => { setText(e.target.value) }} id="search" autoComplete="off" />
-                                                <Image src={search} alt="search" onClick={() => { submitSearch() }} />
+                                                <img src={search.src} alt="search" onClick={() => { submitSearch() }} />
                                             </>
                                         }
                                     </NavBarSearchMobile>

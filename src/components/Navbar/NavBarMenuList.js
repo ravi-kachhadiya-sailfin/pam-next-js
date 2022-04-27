@@ -31,7 +31,7 @@ const NavBarMenuList = (props) => {
               <div className="search-box">
                 <input type="search" onKeyUp={(e) => { if (e.keyCode === 13) { submitSearch() } }} value={text} onChange={(e) => { setText(e.target.value) }} id="search" autoComplete="off" />
                 {/* <i onClick={() => { submitSearch() }} className="fa fa-search" /> */}
-                <Image src={search} alt="search" onClick={() => { submitSearch() }} />
+                <img src={search.src} alt="search" onClick={() => { submitSearch() }} />
               </div>
             </li>
           ) : null}

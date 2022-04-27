@@ -46,11 +46,11 @@ const PopUp = (props) => {
           >
             <Box textAlign="right" className="donate-img">
               {/* <i onClick={() => { handleClose() }} style={{ color: 'orange' }} class="fa fa-times" aria-hidden="true"></i>  */}
-              <Image onClick={() => { handleClose() }} src={popup_close} alt="popup close" />
+              <img onClick={() => { handleClose() }} src={popup_close.src} alt="popup close" />
               <CancelButton onClick={() => { handleClose() }}>
               </CancelButton>
               {/* // <CancelButton className="tool_rating_close" onClick={props.onClose}>
-              //   <Image src={popup_close} alt="popup close" />
+              //   <img src={popup_close.src} alt="popup close" />
               // </CancelButton> */}
             </Box>
             <div>

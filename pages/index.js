@@ -3,9 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
 import Layout from "../src/components/Layout"
+import LoggedOutComponent from "src/components/Home/LoggedOutComponent";
+import { setupAxios } from "../src/setupAxios";
 
 export default function Home({ stars }) {
   console.log("stars", stars);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -36,7 +39,7 @@ export default function Home({ stars }) {
       <main className={styles.main}>
         <Layout isLoggedIn={false}>
           <Link href="/tools">
-            <a>{`Tool on ${stars}`}</a>
+            <LoggedOutComponent />
           </Link>
         </Layout>
       </main>

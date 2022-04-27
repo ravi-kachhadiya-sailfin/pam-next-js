@@ -388,7 +388,7 @@ const ToolDetail = (props) => {
                       <NormalTooltip title={`${shareOpen ? "" : "Share"}`}>
                         <div className={`dropup new-share-card-dropdown ${shareOpen ? "add-bottom-arrow" : ""}`} >
                           <CardIconButton aria-label="share" id="share-btn" onClick={() => { openSharing(); }}>
-                            <Image src={shareOutlinedImage} alt="share icon" height="28" />
+                            <img src={shareOutlinedImage.src} alt="share icon" height="28" />
                           </CardIconButton>
                           {shareOpen &&
                             <Card Card className="share-card-wrapper dropdown-menu show" aria-labelledby="share-btn">
@@ -407,14 +407,14 @@ const ToolDetail = (props) => {
 
                       <NormalTooltip title="Calendar">
                         <CardIconButton aria-label="calendar" onClick={() => { setHasReminder(!hasReminder) }}>
-                          <Image src={calendarCheckedImage} alt="calendar icon" height="28" />
+                          <img src={calendarCheckedImage.src} alt="calendar icon" height="28" />
                         </CardIconButton>
                       </NormalTooltip>
 
                       <NormalTooltip title="Favorite">
                         <CardIconButton aria-label="favorite" onClick={updateFav}>
                           {isFavourite === false || isFavourite === undefined || isFavourite === null ? (
-                            <Image src={heartOutlinedImage} alt="favorite icon" height="28" />
+                            <img src={heartOutlinedImage.src} alt="favorite icon" height="28" />
                           ) : (
                             <i className="fa fa-heart favorite-icon"></i>
                           )}

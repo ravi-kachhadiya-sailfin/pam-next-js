@@ -40,12 +40,12 @@ const Footer = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <FooterImage className="footer_logo" onClick={() => { history.push(ROUTES.default) }} src={logo1} alt="pam" height="100px" />
+            <FooterImage className="footer_logo" onClick={() => { history.push(ROUTES.default) }} src={logo1.src} alt="pam" height="100px" />
           </div>
           <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 footer-link-menu">
             <div>
-              <Link href={ROUTES.tools} role="navigation" onClick={scrollTop} className="text-underline-hover">
-                All Tools
+              <Link href={ROUTES.tools}>
+                <a role="navigation" onClick={scrollTop} className="text-underline-hover">All Tools</a>
               </Link>
             </div>
             <div>
@@ -54,11 +54,13 @@ const Footer = (props) => {
               </div>
             </div>
             <div>
-              <Link href={ROUTES.team} onClick={scrollTop} role="navigation" className="text-underline-hover">About PAM</Link>
+              <Link href={ROUTES.team}>
+                <a onClick={scrollTop} role="navigation" className="text-underline-hover">About PAM</a>
+              </Link>
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-            <FooterImage className="footer_logo_stanford" src={logo2} alt="pam" height="60px" />
+            <FooterImage className="footer_logo_stanford" src={logo2.src} alt="pam" height="60px" />
           </div>
           <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 footer-link-menu standford_card">
             <div>
@@ -81,12 +83,14 @@ const Footer = (props) => {
             Copyright {new Date().getFullYear()}. Stanford University.
           </div>
           <div className="col-md-6 col-xs-4 text-right terms_text  p-0">
-            <Link href={ROUTES.privacypolicy} onClick={scrollTop} role="navigation" className="text-underline-hover" >Privacy</Link>
-            <Link href={ROUTES.tnc} onClick={scrollTop} role="navigation" className="mr-0 text-underline-hover">
-              Terms of Use
+            <Link href={ROUTES.privacypolicy}>
+              <a onClick={scrollTop} role="navigation" className="text-underline-hover">Privacy</a>
+            </Link>
+            <Link href={ROUTES.tnc}>
+              <a onClick={scrollTop} role="navigation" className="mr-0 text-underline-hover">Terms of Use</a>
             </Link>
           </div>
-        </div >
+        </div>
       </div >
       {feedback &&
         <Suspense fallback={<p> Loading...</p>}>

@@ -175,7 +175,7 @@ export default function FeedbackPopUp(props) {
 
         {/* <div className="feed-back-popup">
           <Box textAlign="right" className="">
-            <Image src={popup_close} alt="close the popup" className="feed-img" onClick={() => { handleClose() }} />
+            <img src={popup_close.src} alt="close the popup" className="feed-img" onClick={() => { handleClose() }} />
             <CancelButton className="" >
             </CancelButton>
           </Box>

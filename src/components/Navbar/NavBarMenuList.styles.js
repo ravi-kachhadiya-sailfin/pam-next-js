@@ -80,7 +80,7 @@ export const NavBarListContentWrapper = styled.div`
       position: absolute;
       right: -140px;
       top: -47px;
-      background: url(${Donate_Illus});
+      background: url(${Donate_Illus.src});
       background-size: 120px auto;
       background-repeat: no-repeat;
       height: 120px;

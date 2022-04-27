@@ -4,13 +4,15 @@ import axios from "axios";
 import i18n from "./i18n";
 
 export const setupAxios = () => {
-  // console.log("env", window.DEPLOY_ENV, process.env.REACT_APP_API_BASEURL, process.env.NODE_ENV)
+  // console.log("env", window.DEPLOY_ENV, process.env.NEXT_PUBLIC_API_BASEURL, process.env.NODE_ENV)
   // If the base URL contains DEPLOY_ENV, update with the deployment environment from public/env.js
-  axios.defaults.baseURL = process.env.REACT_APP_API_BASEURL.replace(
+
+  console.log("env", process.env);
+  axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_BASEURL.replace(
     "DEPLOY_ENV",
     window.DEPLOY_ENV
   );
-  axios.defaults.timeout = parseInt(process.env.REACT_APP_API_TIMEOUT);
+  axios.defaults.timeout = parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT);
 
   // For any API error, set a default error message which the services in the application should either use or override
   axios.interceptors.response.use(
