@@ -1,4 +1,5 @@
 import React, { useEffect, useContext } from "react";
+import Image from 'next/image'
 //import PropTypes from "prop-types";
 //import HeaderTitle from "app/tamComponents/header/HeaderTitle";
 // import {
@@ -17,7 +18,7 @@ import { defaultMetaData } from 'app/shared/Utils/index';
 import { MetaContext } from 'app/shared/context/MetaProvider';
 import { ROUTES } from "app/Routes";
 import { scrollTop } from "app/shared/Utils/index";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const FAQPage = ({ title, banner }) => {
   const [expandFAQ, setExpandFAQ] = React.useState(0);
@@ -90,7 +91,7 @@ const FAQPage = ({ title, banner }) => {
       question: <span onClick={() => expandFAQ === 6 ? setExpandFAQ(0) : setExpandFAQ(7)}>What will you do with the information you collect?</span>,
       answer: (<>
         <AnswerNormalText className="mb">
-          We are committed to respecting your privacy and confidentiality. We will never sell your data or information. Please see <Link to={ROUTES.privacypolicy} role="navigation" onClick={scrollTop} className="text-underline">privacy policy page</Link> for more information about how we protect and use the information you provide.
+          We are committed to respecting your privacy and confidentiality. We will never sell your data or information. Please see <Link href={ROUTES.privacypolicy} role="navigation" onClick={scrollTop} className="text-underline">privacy policy page</Link> for more information about how we protect and use the information you provide.
         </AnswerNormalText>
 
         <AnswerNormalText>
@@ -178,7 +179,7 @@ const FAQPage = ({ title, banner }) => {
     {
       question: <span onClick={() => expandFAQ === 10 ? setExpandFAQ(0) : setExpandFAQ(11)}>We are looking for designers or developers for our own program. Who designed and developed PAM?</span>,
       answer: (<>
-        <AnswerNormalText>See our <Link to={ROUTES.team} role="navigation" onClick={scrollTop} className="text-underline"> Team</Link> page</AnswerNormalText>
+        <AnswerNormalText>See our <Link href={ROUTES.team} role="navigation" onClick={scrollTop} className="text-underline"> Team</Link> page</AnswerNormalText>
       </>)
     },
     {
@@ -256,7 +257,7 @@ const FAQPage = ({ title, banner }) => {
                     >
                       {qt.question}
                     </a>
-                    <span className="arrow" style={{ float: "right" }}>{expandFAQ === i + 1 ? <img className="down-arrow" src={op} alt={""} /> : <img className="right-arrow" src={cl} alt={""} />}</span>
+                    <span className="arrow" style={{ float: "right" }}>{expandFAQ === i + 1 ? <Image className="down-arrow" src={op} alt={""} /> : <Image className="right-arrow" src={cl} alt={""} />}</span>
                   </QuestionText>
                 </h4>
               </div>

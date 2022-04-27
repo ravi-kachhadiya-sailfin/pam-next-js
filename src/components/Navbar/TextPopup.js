@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Image from 'next/image'
 import { Box } from '@material-ui/core';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
@@ -38,7 +38,7 @@ const TextPopUp = (props) => {
             tabIndex={-1}
           >
             <Box textAlign="right" className="donate-img">
-              <img onClick={() => { handleClose() }} src={popup_close} alt="popup close" />
+              <Image onClick={() => { handleClose() }} src={popup_close} alt="popup close" />
               <CancelButton onClick={() => { handleClose() }}>
               </CancelButton>
             </Box>

@@ -1,5 +1,5 @@
 import { Box } from '@material-ui/core';
-
+import Image from 'next/image'
 
 import {
   CancelButton,
@@ -111,7 +111,7 @@ const ToolRating = ({ userRating, updateUserRating, ...props }) => {
     <ContentWrapper className="tool_rating_popup">
       <Box textAlign="right">
         <CancelButton className="tool_rating_close" onClick={props.onClose}>
-          <img src={popup_close} alt="popup close" />
+          <Image src={popup_close} alt="popup close" />
         </CancelButton>
       </Box>
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Image from 'next/image'
 import { useHistory } from 'react-router-dom';
 
 import { NavBarListContentWrapper } from "./NavBarMenuList.styles";
@@ -30,7 +31,7 @@ const NavBarMenuList = (props) => {
               <div className="search-box">
                 <input type="search" onKeyUp={(e) => { if (e.keyCode === 13) { submitSearch() } }} value={text} onChange={(e) => { setText(e.target.value) }} id="search" autoComplete="off" />
                 {/* <i onClick={() => { submitSearch() }} className="fa fa-search" /> */}
-                <img src={search} alt="search" onClick={() => { submitSearch() }} />
+                <Image src={search} alt="search" onClick={() => { submitSearch() }} />
               </div>
             </li>
           ) : null}

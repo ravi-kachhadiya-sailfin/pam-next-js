@@ -1,5 +1,5 @@
-import PlaceHolderImage from "assets/images/placeholder_logo.png";
-import logo from 'assets/images/logos/logo1.svg';
+import PlaceHolderImage from "../assets/images/placeholder_logo.png";
+import logo from '../assets/images/logos/logo1.svg';
 
 export const adminAuthenticationToken = () => {
     const HEADERS =
@@ -105,7 +105,7 @@ export const defaultMetaData = {
     title: "Pause A Moment",
     description: "The COVID-19 pandemic has taken a toll. Pause a moment to focus on your well-being.",
     image: logo,
-    url: window.location.href,
+    url: global?.location?.href,
     keywords: "mental health, mood, burnout, anxiety, stress, PTSD, Depression, trauma, cbt, cognitive behavioral therapy, COVID, healthcare worker, meditation, visualization, relaxation, problem solving, breathing, behavioral activation, behavior activation, positive psychology, activity scheduling, cognitive bias, loving kindness, treatment resistant depression, compassion, self-compassion, rumination, hindsight bias, second guess, reappraisal, gratitude",
 }
 

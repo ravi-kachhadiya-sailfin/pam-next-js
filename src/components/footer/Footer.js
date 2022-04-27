@@ -1,14 +1,16 @@
 import React, { useState, lazy, Suspense } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import Link from 'next/link'
+
 
 import { FooterSectionWrapper, FooterImage } from "./Footer.styles";
 
-import { ROUTES } from "src/Routes";
+import { ROUTES } from "../../Routes";
 
-import logo1 from "assets/images/logos/logo1.svg";
-import logo2 from "assets/images/logos/logo2.svg";
+import logo1 from "src/assets/images/logos/logo1.svg";
+import logo2 from "src/assets/images/logos/logo2.svg";
 
-const FeedbackPopUp = lazy(() => import(/* webpackChunkName: "FeedbackPopUp" */ "app/features/FeedbackPopup"));
+const FeedbackPopUp = lazy(() => import(/* webpackChunkName: "FeedbackPopUp" */ "../FeedbackPopup"));
 // import FeedbackPopUp from "app/features/FeedbackPopup";
 
 
@@ -42,7 +44,7 @@ const Footer = (props) => {
           </div>
           <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6 footer-link-menu">
             <div>
-              <Link to={ROUTES.tools} role="navigation" onClick={scrollTop} className="text-underline-hover">
+              <Link href={ROUTES.tools} role="navigation" onClick={scrollTop} className="text-underline-hover">
                 All Tools
               </Link>
             </div>
@@ -52,7 +54,7 @@ const Footer = (props) => {
               </div>
             </div>
             <div>
-              <Link to={ROUTES.team} onClick={scrollTop} role="navigation" className="text-underline-hover">About PAM</Link>
+              <Link href={ROUTES.team} onClick={scrollTop} role="navigation" className="text-underline-hover">About PAM</Link>
             </div>
           </div>
           <div className="col-lg-3 col-md-3 col-sm-6 col-xs-6">
@@ -79,8 +81,8 @@ const Footer = (props) => {
             Copyright {new Date().getFullYear()}. Stanford University.
           </div>
           <div className="col-md-6 col-xs-4 text-right terms_text  p-0">
-            <Link to={ROUTES.privacypolicy} onClick={scrollTop} role="navigation" className="text-underline-hover" >Privacy</Link>
-            <Link to={ROUTES.tnc} onClick={scrollTop} role="navigation" className="mr-0 text-underline-hover">
+            <Link href={ROUTES.privacypolicy} onClick={scrollTop} role="navigation" className="text-underline-hover" >Privacy</Link>
+            <Link href={ROUTES.tnc} onClick={scrollTop} role="navigation" className="mr-0 text-underline-hover">
               Terms of Use
             </Link>
           </div>

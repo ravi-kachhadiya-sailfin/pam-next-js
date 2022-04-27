@@ -2,12 +2,18 @@
 /* eslint-disable react/jsx-no-comment-textnodes */
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, useLocation } from "react-router-dom"
+import { useRouter } from 'next/router'
+// import { useLocation } from "react-router-dom"
+
+import Link from "next/link";
+
 
 const NavBarMenuItem = (props) => {
   // console.log(props.title, props.onClick)
   // let arr = []
-  const currentPg = useLocation();
+  // const currentPg = useLocation();
+  const currentPg = useRouter();
+
 
   return props.isDonateButton ? (
     <li className="donate-button" onClick={() => { props.toggleDonet(true) }}>
@@ -21,7 +27,7 @@ const NavBarMenuItem = (props) => {
             {props.title}
           </a>
           :
-          <Link className="a-class" onClick={(event) => { props.onClick(event) }} to={props.route ? props.route : "#"}>
+          <Link className="a-class" onClick={(event) => { props.onClick(event) }} href={props.route ? props.route : "#"}>
             {props.title}
           </Link>
       }

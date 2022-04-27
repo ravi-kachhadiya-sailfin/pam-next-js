@@ -1,5 +1,5 @@
 import axios from "axios";
-import { userAuthenticationToken, getSessionId, logOut } from 'common/commonFunction';
+import { userAuthenticationToken, getSessionId, logOut } from '../../src/common/commonFunction';
 
 const AUTH_BASE_URL = "/auth";
 

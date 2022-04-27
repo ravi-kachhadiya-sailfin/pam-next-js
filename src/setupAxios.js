@@ -1,7 +1,7 @@
 // Setup defaults and the response interceptor for the axios HTTP library.
 
 import axios from "axios";
-import i18n from "common/i18n";
+import i18n from "./i18n";
 
 export const setupAxios = () => {
   // console.log("env", window.DEPLOY_ENV, process.env.REACT_APP_API_BASEURL, process.env.NODE_ENV)

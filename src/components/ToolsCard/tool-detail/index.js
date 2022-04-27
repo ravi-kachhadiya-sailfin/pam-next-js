@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useContext } from 'react';
+import Image from 'next/image'
 import { Box, Card } from '@material-ui/core';
 import { useLocation, useParams, Redirect } from 'react-router';
 import { defaultMetaData, } from 'app/shared/Utils/index'; // handleClose as popupClose, handleOpen
@@ -387,7 +388,7 @@ const ToolDetail = (props) => {
                       <NormalTooltip title={`${shareOpen ? "" : "Share"}`}>
                         <div className={`dropup new-share-card-dropdown ${shareOpen ? "add-bottom-arrow" : ""}`} >
                           <CardIconButton aria-label="share" id="share-btn" onClick={() => { openSharing(); }}>
-                            <img src={shareOutlinedImage} alt="share icon" height="28" />
+                            <Image src={shareOutlinedImage} alt="share icon" height="28" />
                           </CardIconButton>
                           {shareOpen &&
                             <Card Card className="share-card-wrapper dropdown-menu show" aria-labelledby="share-btn">
@@ -406,14 +407,14 @@ const ToolDetail = (props) => {
 
                       <NormalTooltip title="Calendar">
                         <CardIconButton aria-label="calendar" onClick={() => { setHasReminder(!hasReminder) }}>
-                          <img src={calendarCheckedImage} alt="calendar icon" height="28" />
+                          <Image src={calendarCheckedImage} alt="calendar icon" height="28" />
                         </CardIconButton>
                       </NormalTooltip>
 
                       <NormalTooltip title="Favorite">
                         <CardIconButton aria-label="favorite" onClick={updateFav}>
                           {isFavourite === false || isFavourite === undefined || isFavourite === null ? (
-                            <img src={heartOutlinedImage} alt="favorite icon" height="28" />
+                            <Image src={heartOutlinedImage} alt="favorite icon" height="28" />
                           ) : (
                             <i className="fa fa-heart favorite-icon"></i>
                           )}

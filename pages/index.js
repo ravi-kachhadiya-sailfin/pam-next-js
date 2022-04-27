@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import Layout from "../src/components/Layout"
 
 export default function Home({ stars }) {
   console.log("stars", stars);
@@ -33,9 +34,11 @@ export default function Home({ stars }) {
       </Head>
 
       <main className={styles.main}>
-        <Link href="/tools">
-          <a>{`Tool on ${stars}`}</a>
-        </Link>
+        <Layout isLoggedIn={false}>
+          <Link href="/tools">
+            <a>{`Tool on ${stars}`}</a>
+          </Link>
+        </Layout>
       </main>
     </div>
   )

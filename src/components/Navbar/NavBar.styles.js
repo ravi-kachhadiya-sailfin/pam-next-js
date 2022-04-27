@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Helpline_right from "src/assets/images/top-header-bg-right.png";
+import Helpline_right from "../../assets/images/top-header-bg-right.png";
 import Helpline_left from "src/assets/images/top-header-bg-left.png";
 import { Box } from "@material-ui/core";
 
@@ -134,7 +134,7 @@ export const NavBarHeadline = styled.div`
   &::after{
    content: "";
    position: absolute;
-   background-image:url(${Helpline_right});
+   background-image:url(../../assets/images/top-header-bg-right.png);
    width: 116px;
    height: 28px;
    top: 0;

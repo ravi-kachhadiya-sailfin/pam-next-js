@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import Image from 'next/image'
 import { CardContent, CardMedia, Box, Card } from '@material-ui/core';
 import calendarCheckedImage from 'app/shared/assets/images/calendar_icon.svg';
 import cardImage from 'app/shared/assets/images/card.jpeg';
@@ -93,7 +94,7 @@ const ToolsCard = (props) => {
           <CardTag>New</CardTag>
           {(cardData && (cardData.videoLink && cardData.videoLink !== "null")) &&
             <CardPlayIcon>
-              <img src={playIcon} onClick={() => navigateToDetail(cardData, history, cardData.id, ROUTES)} alt="play-icon" height="100%" width="100%" />
+              <Image src={playIcon} onClick={() => navigateToDetail(cardData, history, cardData.id, ROUTES)} alt="play-icon" height="100%" width="100%" />
             </CardPlayIcon>
           }
           <CardMedia className="tool-img" component="img" alt={cardData.title || ""} onError={imagePlaceholder} image={cardData.thumbnailImage ? cardData.thumbnailImage : cardImage} onClick={() => navigateToDetail(cardData, history, cardData.id, ROUTES)} />
@@ -134,20 +135,20 @@ const ToolsCard = (props) => {
               <Box item className="share-tool">
                 <NormalTooltip title="Share">
                   <CardIconButton aria-label="share a tool" onClick={() => { openSharing() }} className={`tool-card ${props.className}`}>
-                    <img src={shareOutlinedImage} className="share-icon" alt="Share icon" height="28" />
+                    <Image src={shareOutlinedImage} className="share-icon" alt="Share icon" height="28" />
                   </CardIconButton>
                 </NormalTooltip>
 
                 <NormalTooltip title="Calendar">
                   <CardIconButton className={`tool-card ${props.className}`} aria-label="calendar" onClick={() => { setHasReminder(!hasReminder) }}>
-                    <img src={calendarCheckedImage} className="calendar-icon" alt="calendar icon" height="28" />
+                    <Image src={calendarCheckedImage} className="calendar-icon" alt="calendar icon" height="28" />
                   </CardIconButton>
                 </NormalTooltip>
 
                 <NormalTooltip title="Favorite">
                   <CardIconButton className={`tool-card ${props.className}`} aria-label="favorite" onClick={() => updateFav()}>
                     {isFavourite === false ? (
-                      <img src={heartOutlinedImage} alt="favorite icon" className="heart-icon" height="28" />
+                      <Image src={heartOutlinedImage} alt="favorite icon" className="heart-icon" height="28" />
                     ) : (
                       <i className="fa fa-heart favorite-icon"></i>
                     )}

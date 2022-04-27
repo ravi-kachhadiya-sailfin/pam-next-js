@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { withRouter } from "react-router";
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+// import { withRouter } from "react-router";
 import { Helmet } from "react-helmet";
 
 import { Popover, Box } from "@material-ui/core";
@@ -49,11 +51,12 @@ import search from "src/assets/images/search_mobile.svg";
 const NavBar = (props) => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const { setModal } = React.useContext(AppStoreContext);
+    const router = useRouter()
     // const { userInfo } = React.useContext(UserContext);
     const { meta } = React.useContext(MetaContext);
     const [isDonate, setIsDonate] = useState(false)
     const [isTextPopup, setIsTextPopup] = useState(false)
-    const auth = userAuthenticationValidate()
+    const [auth, setAuth] = useState(false)
 
     const drawerWidth = 240;
 
@@ -134,6 +137,8 @@ const NavBar = (props) => {
         }
     }));
 
+    console.log("router", router);
+
     const routeNames = {
         "/": "home",
         "/home": "home",
@@ -169,6 +174,10 @@ const NavBar = (props) => {
     const [pathName, setPathName] = useState(props.location?.pathname);
     // const [feedback, setFeedback] = useState(false);
     // const [userName, setUserName] = useState("login");
+
+    useEffect(() => {
+        setAuth(userAuthenticationValidate())
+    }, [])
 
     useEffect(() => {
         setPathName(props.location?.pathname);
@@ -304,7 +313,7 @@ const NavBar = (props) => {
 
     // console.log("userName", userName);
     return (
-        <NavBarSection className={["/", "/home", "/faq"].includes(props?.location?.pathname) && "header-over-banner"}>
+        <NavBarSection className={["/", "/home", "/faq"].includes(router?.pathname) && "header-over-banner"}>
             <Helmet>
 
                 {/* Primary Meta Tags */}
@@ -394,20 +403,20 @@ const NavBar = (props) => {
                                     <span className="icon-bar" />
                                 </NavBarButton>
                                 <NavBarBrand>
-                                    <img src={logo1} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
-                                    <img className="mobile-logo" src={logomobile} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
+                                    <Image src={logo1} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
+                                    <Image className="mobile-logo" src={logomobile} alt="PAM Pause A Moment" onClick={() => { window.location.href = "/" }} />
                                 </NavBarBrand>
                                 <NavBarSubBrand>
-                                    <img src={stanfordMedLogo} alt="Stanford medicine" />
+                                    <Image src={stanfordMedLogo} alt="Stanford medicine" />
                                 </NavBarSubBrand>
                                 <div className="search_btn_donate">
                                     <NavBarDonateButtonMobile onClick={handleDonate} className={openSearchBar && "donate_hide"}>
-                                        <img src={heart} alt="PAM Pause A Moment" />
+                                        <Image src={heart} alt="PAM Pause A Moment" />
                                         Donate</NavBarDonateButtonMobile>
                                     <NavBarSearchMobile className={openSearchBar && "search-box"}>
-                                        {!openSearchBar ? <img src={search} alt="search" onClick={() => { setSearchBar(true) }} />
+                                        {!openSearchBar ? <Image src={search} alt="search" onClick={() => { setSearchBar(true) }} />
                                             : <> <input className="mobile_search" type="search" onKeyUp={(e) => { if (e.keyCode === 13) { submitSearch() } }} value={text} onChange={(e) => { setText(e.target.value) }} id="search" autoComplete="off" />
-                                                <img src={search} alt="search" onClick={() => { submitSearch() }} />
+                                                <Image src={search} alt="search" onClick={() => { submitSearch() }} />
                                             </>
                                         }
                                     </NavBarSearchMobile>
@@ -488,4 +497,4 @@ NavBar.propTypes = {
     /* List of items which needs to be in Menu*/
     menuItems: PropTypes.array,
 };
-export default withRouter(NavBar);
+export default NavBar;

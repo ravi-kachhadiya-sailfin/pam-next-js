@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { HeaderSection, HeaderBannerContainerWrapper } from './HeaderBanner.styles';
+import Image from 'next/image'
 // import headerImg from 'app/shared/assets/images/FAQs.png';
 import headerBgImg from 'app/shared/assets/images/FAQs Light bg.png';
 
@@ -40,11 +41,11 @@ const HeaderBanner = (props) => {
             </div>
           </div>
           <div className="faq_image">
-            <img className="TAM-Hero_bg" alt="FAQs" src={headerBgImg} />
-            {/* <img className="TAM-Hero" alt="FAQs" src={headerImg} /> */}
+            <Image className="TAM-Hero_bg" alt="FAQs" src={headerBgImg} />
+            {/* <Image className="TAM-Hero" alt="FAQs" src={headerImg} /> */}
             <div className="TAM-Hero" >
               {(browser === "safari" || OS === "MacOS") ?
-                <img className="TAM-Hero TAM-Hero-login safari-img-faq" src={LottieGif} alt={"faq"} />
+                <Image className="TAM-Hero TAM-Hero-login safari-img-faq" src={LottieGif} alt={"faq"} />
                 :
                 <lottie-player
                   id="firstLottie"
