@@ -30,7 +30,7 @@ const HeaderBanner = (props) => {
     <HeaderBannerContainerWrapper className="login_after_banner">
       <div className="how-it-works-mobile">{props.bannerTitle}</div>
       {(browser === "safari" || OS === "MacOS") ?
-        <img class="TAM-Hero TAM-Hero-login safari-img" onClick={() => window.location.href = "#find-right-tools"} src={LottieGif} alt={props.bannerTitle} />
+        <img className="TAM-Hero TAM-Hero-login safari-img" onClick={() => window.location.href = "#find-right-tools"} src={LottieGif} alt={props.bannerTitle} />
         :
         <lottie-player
           id="firstLottie"
@@ -39,7 +39,7 @@ const HeaderBanner = (props) => {
           loop
           mode="normal"
           src="https://assets1.lottiefiles.com/packages/lf20_2qb91az8.json"
-          class="TAM-Hero TAM-Hero-login"
+          className="TAM-Hero TAM-Hero-login"
         ></lottie-player>
       }
 

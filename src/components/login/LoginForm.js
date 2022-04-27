@@ -102,7 +102,7 @@ const LoginForm = ({ control, resizeModal, setShowModal, ...props }) => {
               <Grid container direction={'row'}>
                 <Grid className="input_group_cs" item lg={12} md={12} sm={12} xs={12}>
                   <LoginLabel>
-                    <SubLoginLabel>If you haven't created an account, please <span className="hyperlink" role="tab" onClick={() => props.setValue(1)}>register</span> now
+                    <SubLoginLabel>{`If you haven't created an account, please`}<span className="hyperlink" role="tab" onClick={() => props.setValue(1)}>register</span> now
                     </SubLoginLabel>
                   </LoginLabel>
                 </Grid>

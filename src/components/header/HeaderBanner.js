@@ -40,7 +40,7 @@ const HeaderBanner = (props) => {
 
       <div className="how-it-works-mobile" onClick={() => window.location.href = "#find-right-tools"}>{props.bannerTitle}</div>
       {(browser === "safari" || OS === "MacOS") ?
-        <img class="TAM-Hero safari-img" onClick={() => window.location.href = "#find-right-tools"} src={LottieGif} alt={props.bannerTitle} />
+        <img className="TAM-Hero safari-img" onClick={() => window.location.href = "#find-right-tools"} src={LottieGif} alt={props.bannerTitle} />
         : <lottie-player
           id="firstLottie"
           ref={ref}
@@ -49,7 +49,7 @@ const HeaderBanner = (props) => {
           mode="normal"
           renderer="svg"
           src="https://assets1.lottiefiles.com/packages/lf20_aaodbj8k/STN-TAM-Hero graphic animation/TAM-hero graphic.json"
-          class="TAM-Hero"
+          className="TAM-Hero"
           onClick={() => window.location.href = "#find-right-tools"}
         ></lottie-player>
       }

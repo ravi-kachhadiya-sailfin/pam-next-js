@@ -272,7 +272,7 @@ const HomePageLoggedOut = (props) => {
                     if (i !== 0) {
                       return false
                     }
-                    return <CardsWrapper className="activate_bucket" >
+                    return <CardsWrapper className="activate_bucket" key={i}>
                       <div className="activate_bucket_scroll">
                         <CardContentWrapper className="bucket_wrapper">
                           <div className="activate_bucket_title" style={{ color: "#09425A", fontWeight: "600" }}>{date}
@@ -371,7 +371,7 @@ const HomePageLoggedOut = (props) => {
                 <CardContentWrapper className="login_after_card_body">
                   <CardsTitle className="login_after_card_wrapper">
                     <div className="login_after_card_row card-text">
-                      <Box className="tools-right-for-me-title">Check your progress to keep track of what's helping</Box>
+                      <Box className="tools-right-for-me-title">{`Check your progress to keep track of what's helping`}</Box>
                       <Box className="cursor-p login_after_card_arrow" >
                         <i className="fa fa-chevron-right card_arrow_icon" role="navigation" onClick={() => { scrollTop(); history.push(ROUTES.my_progress) }}></i>
                         <img className="mobile_arrow" src={card_arrow} role="navigation" alt="card_arrow" onClick={() => { scrollTop(); history.push(ROUTES.my_progress) }} />
@@ -390,7 +390,7 @@ const HomePageLoggedOut = (props) => {
                 <CardContentWrapper className="login_after_card_body">
                   <CardsTitle className="login_after_card_wrapper">
                     <div className="login_after_card_row card-text">
-                      <Box className="tools-right-for-me-title">It's good to do this every 1-2 months to make sure you're finding the tools that are the best fit.</Box>
+                      <Box className="tools-right-for-me-title">{`It's good to do this every 1-2 months to make sure you're finding the tools that are the best fit.`}</Box>
                       <Box className="cursor-p login_after_card_arrow" >
                         <i className="fa fa-chevron-right card_arrow_icon" role="navigation" onClick={() => { scrollTop(); history.push(ROUTES.understanding_you) }}></i>
                         <img className="mobile_arrow" src={card_arrow} alt="card_arrow" role="navigation" onClick={() => { scrollTop(); history.push(ROUTES.understanding_you) }} />
@@ -496,7 +496,7 @@ const HomePageLoggedOut = (props) => {
                   <Grid className="by_date_row" id="by-date-tab" aria-labelledby="by-date-tab-id" container direction="row" item lg={12} md={12} sm={12} xs={12}>
                     {byDate.map((elm, i) => {
                       let date = new Date(elm.date).toDateString()
-                      return <div className="bt_date_col col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                      return <div className="bt_date_col col-xs-12 col-sm-12 col-md-4 col-lg-4" key={i}>
                         <CardsWrapper className="activate_bucket" >
                           <div className="activate_bucket_scroll">
                             <CardContentWrapper className="bucket_wrapper" >
