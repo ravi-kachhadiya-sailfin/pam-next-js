@@ -6,12 +6,12 @@ import * as yup from "yup";
 
 // import RadioWithColor from "app/tamComponents/radio-w";
 
-// import {
-//   PopUp,
-//   ContentWrapper,
-//   MessageText,
-//   FtTextArea
-// } from './FeedbackPopup.style';
+import {
+  PopUp,
+  ContentWrapper,
+  //   MessageText,
+  //   FtTextArea
+} from './FeedbackPopup.style';
 
 // import {
 //   CancelButton,
