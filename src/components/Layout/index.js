@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from 'react';
 import propTypes from "prop-types";
 import { useHistory } from 'react-router-dom';
 
-import NavBar from "src/components/Navbar/NavBar";
+import NavBar from "../Navbar/Navbar";
 import Footer from "src/components/footer/Footer";
 
 import { AppStoreContext } from "src/providers/AppStoreProvider";
