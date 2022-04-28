@@ -157,25 +157,6 @@ export const SliderWrapper = styled(MuiSlider)`
   }
  
   }
-  //  .PrivateValueLabel-circle-40{
-  //   background-image: url(${pointer_slider.src});
-  //   width: 29px;
-  //   height: 51px;   
-  //   display: flex;
-  //   transform: unset;
-  //   align-items: center;
-  //   border-radius: 0;
-  //   justify-content: center;
-  //   background-color: transparent;
-  //   background-size: contain;
-  //   background-repeat: no-repeat;
-  //   position: relative;
-  //   top: -8px;
-
-  //   @media(max-width:767px){
-  //     width: 25px;
-  //   height: 40px;
-  //   }
 
 
 
