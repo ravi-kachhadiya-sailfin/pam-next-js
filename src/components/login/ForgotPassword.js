@@ -11,9 +11,9 @@ import {
 } from './LoginPage.styles';
 import { useFormik } from 'formik';
 import { forgotPasswordSchema } from './LoginPageValidationSchema';
-import TAMAlert from 'app/tamComponents/alert/TAMAlert';
-import { forgetPassword } from 'app/shared/services/auth';
-import { AppStoreContext } from 'app/shared/store/AppStoreProvider';
+import TAMAlert from '../alert/TAMAlert';
+import { forgetPassword } from '../../../pages/api/auth';
+import { AppStoreContext } from '../../providers/AppStoreProvider';
 
 const ResetPassword = (props) => {
   const handleModal = useRef();

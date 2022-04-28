@@ -47,7 +47,7 @@ export default function Home({ stars }) {
   )
 }
 
-Home.getInitialProps = async (ctx) => {
-  // console.log("ctxc", Object.keys(ctx.req));
-  return { stars: ctx.req.headers.referer }
-}
+// Home.getInitialProps = async (ctx) => {
+//   // console.log("ctxc", Object.keys(ctx.req));
+//   return { stars: ctx.req.headers.referer }
+// }
