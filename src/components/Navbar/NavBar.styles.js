@@ -161,11 +161,11 @@ export const NavBarHeadline = styled.div`
    }
 
   a{
-    color: #78E0FA;
+    color: #78E0FA !important;
     // padding: 0px 3px;
   }
   span{
-    color: #78E0FA;
+    color: #78E0FA !important;
     cursor: pointer;
     font-style: italic;
 

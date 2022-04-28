@@ -41,7 +41,7 @@ import {
 // import { useAuth } from "../registration/authService";
 import { userAuthenticationValidate } from '../../common/commonFunction';
 import { ROUTES } from "../../Routes";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const HomePageLoggedOut = (props) => {
   const history = useHistory();

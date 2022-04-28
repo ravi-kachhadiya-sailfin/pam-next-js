@@ -17,7 +17,7 @@ const Layout = (props) => {
   const { setModal } = useContext(AppStoreContext);
   const [sessionId, setSessionId] = useState("");
   const { userInfo } = useContext(UserContext);
-  const [userName, setUserName] = useState("login");
+  const [userName, setUserName] = useState("Login");
   const [menuItemsHorizontal, setMenuItemsHorizontal] = useState([]);
   const [menuItemsVertical, setMenuItemsVertical] = useState([]);
   const [subMenuItemsVertical, setSubMenuItemsVertical] = useState([]);

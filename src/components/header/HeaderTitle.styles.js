@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const HeaderTitleContainerWrapper = styled.div.attrs(() => ({
   className: "container heading-title",
 }))`
-  width: auto;
+  width: auto !important;
   max-width: unset;
   position: relative;
   padding-top:0px;

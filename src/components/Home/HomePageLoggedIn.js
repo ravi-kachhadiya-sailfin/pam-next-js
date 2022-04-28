@@ -38,7 +38,7 @@ import { getRecentActivity, getByDateData, getRecentActivityText } from '../MyPr
 import { convertTestimonialArray, getDeviceSize } from 'app/shared/Utils/index';
 import TAMAlert from 'app/tamComponents/alert/TAMAlert';
 
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 const HomePageLoggedOut = (props) => {
   const history = useHistory();

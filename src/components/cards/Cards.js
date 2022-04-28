@@ -6,7 +6,7 @@ import {
   ContinueButton,
 } from "./Cards.styles";
 
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 import Slider from "../slider/Slider";
 import SingleChoiceCard from "./SingleChoiceCard";
 import PropTypes from "prop-types";
