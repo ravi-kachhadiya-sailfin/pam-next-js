@@ -38,9 +38,7 @@ export default function Home({ stars }) {
 
       <main className={styles.main}>
         <Layout isLoggedIn={false}>
-          <Link href="/tools">
-            <LoggedOutComponent />
-          </Link>
+          <LoggedOutComponent />
         </Layout>
       </main>
     </div>

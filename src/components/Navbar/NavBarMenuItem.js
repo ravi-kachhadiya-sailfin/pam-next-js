@@ -28,7 +28,7 @@ const NavBarMenuItem = (props) => {
           </a>
           :
           <Link href={props.route ? props.route : "#"}>
-            <a className="a-class" onClick={(event) => { props.onClick(event) }}>{props.title}</a>
+            <a className="a-class">{props.title}</a>
           </Link>
       }
     </li>
