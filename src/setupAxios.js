@@ -10,7 +10,7 @@ export const setupAxios = () => {
   console.log("env", process.env, process.env.API_BASEURL, process.env.NEXT_PUBLIC_API_BASEURL);
   axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_BASEURL.replace(
     "DEPLOY_ENV",
-    process.env.ENV_TYPE
+    process.env.NEXT_PUBLIC_ENV_TYPE
   );
   axios.defaults.timeout = parseInt(process.env.NEXT_PUBLIC_API_TIMEOUT);
 
