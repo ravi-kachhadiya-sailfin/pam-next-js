@@ -172,11 +172,11 @@ const ToolsLandingPageAll = (props) => {
             </h1>
             {prevPage === "home" ?
               <RecomamndedPageToolDiscription>
-                <div className="mb-7">These are in-depth tools that can help with the challenges and stressors you've been facing. They take a bit longer to learn, but with regular practice you can master them!</div>
-                <>We recommend taking a moment for a brief assessment of how you're doing <Link to={ROUTES.my_progress} onClick={scrollTop}>here</Link>. This will help you track your progress and allows us to recommend tools that have helped others with similar profiles and experiences.</>
+                <div className="mb-7">{`These are in-depth tools that can help with the challenges and stressors you've been facing. They take a bit longer to learn, but with regular practice you can master them!`}</div>
+                <>{`We recommend taking a moment for a brief assessment of how you're doing `}<Link to={ROUTES.my_progress} onClick={scrollTop}>{`here`}</Link>{`. This will help you track your progress and allows us to recommend tools that have helped others with similar profiles and experiences.`}</>
               </RecomamndedPageToolDiscription>
               : <RecomamndedPageToolDiscription>
-                These are in-depth tools that can help with the challenges and stressors you've been facing. They take a bit longer to learn, but with regular practice you can master them!
+                {`These are in-depth tools that can help with the challenges and stressors you've been facing. They take a bit longer to learn, but with regular practice you can master them!`}
               </RecomamndedPageToolDiscription>
             }
             <div className="time">Approximately 15 minutes the first time you try them. They will take less time with practice</div>

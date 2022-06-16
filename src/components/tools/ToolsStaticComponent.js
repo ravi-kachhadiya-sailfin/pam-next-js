@@ -39,8 +39,8 @@ const ToolsStaticComponent = (props) => {
     window.addEventListener('resize', handleResize)
   }, [handleResize]);
 
-  let healthCondition = !!props.healthCondition && props.healthCondition.map((hc) => {
-    return <div>{hc}</div>
+  let healthCondition = !!props.healthCondition && props.healthCondition.map((hc, index) => {
+    return <div key={hc + index}>{hc}</div>
   })
 
   const trackProgress = () => {
@@ -90,13 +90,14 @@ const ToolsStaticComponent = (props) => {
           {props.prevPage === "home" && <>
             <ToolPageSubTitleDescription>Tailored Recommendations and tracking your progress can help even more!</ToolPageSubTitleDescription>
             <ToolPageSubDescription>
-              We recommend taking a moment to do a more in-depth (but still brief!) assessment of how you're doing. This will allow us to make more personalized recommendations and help you track your progress.
-            </ToolPageSubDescription>
+              {`We recommend taking a moment to do a more in-depth (but still brief!) assessment of how you're doing. This will allow us to make more personalized recommendations and help you track your progress.`}
+            </ToolPageSubDescription >
             <ToolPageSubDescription className="last-description">
               Tracking helps you to see which skills seem to be helping the most, allows us to find new ones that may be useful to you, and will help you see your progress over time.
             </ToolPageSubDescription>
           </>}
-          {props.prevPage !== "home" &&
+          {
+            props.prevPage !== "home" &&
             <>
               <ListWithTitle
                 title=""
@@ -105,9 +106,10 @@ const ToolsStaticComponent = (props) => {
               />
               <ToolPageSubDescription className="mb-0">
                 {props.healthCondition?.length > 0 && props.healthCondition[0] === "No elevated symptoms of Trauma, Anxiety or Depression" ?
-                  <>We're so glad to see you've been feeling ok. We know it has been a difficult couple of years for many people! The activities we recommend can be helpful but if you ever have diffculties for more than a month or if these activities don't help enough, you may need additional help and support. These activities do not take the place of meeting with a trained therapist, counselor, or primary care provider. If you are having thoughts of suicide or need someone to talk to right now, immediate help is available through the <span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("https://www.crisistextline.org/") }}>Crisis Text Line</span> or <span role="button" className="c-b text-underline" onClick={() => { setIsTextPopup("https://suicidepreventionlifeline.org/") }}>Suicide Prevention Hotline</span> Outside the US, you can find international crisis lines <span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("http://www.suicide.org/international-suicide-hotlines.html") }}>here</span>.</>
+                  <>
+                    {`We're so glad to see you've been feeling ok. We know it has been a difficult couple of years for many people! The activities we recommend can be helpful but if you ever have difficulties for more than a month or if these activities don't help enough, you may need additional help and support. These activities do not take the place of meeting with a trained therapist, counselor, or primary care provider. If you are having thoughts of suicide or need someone to talk to right now, immediate help is available through the `}<span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("https://www.crisistextline.org/") }}>{`Crisis Text Line`}</span> or <span role="button" className="c-b text-underline" onClick={() => { setIsTextPopup("https://suicidepreventionlifeline.org/") }}>Suicide Prevention Hotline</span> Outside the US, you can find international crisis lines <span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("http://www.suicide.org/international-suicide-hotlines.html") }}>here</span>.</>
                   :
-                  <>The activities we recommend can help but if you have been feeling this way for more than a month or if these activities don't help enough, you may need additional help and support. These activities do not take the place of meeting with a trained therapist, counselor, or primary care provider. If you are having thoughts of suicide or need someone to talk to right now, immediate help is available through the <span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("https://www.crisistextline.org/") }}>Crisis Text Line</span> or <span role="button" className="c-b text-underline" onClick={() => { setIsTextPopup("https://suicidepreventionlifeline.org/") }}>Suicide Prevention Hotline</span> Outside the US, you can find international crisis lines <span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("http://www.suicide.org/international-suicide-hotlines.html") }}>here</span>.</>
+                  <>{`The activities we recommend can help but if you have been feeling this way for more than a month or if these activities don't help enough, you may need additional help and support. These activities do not take the place of meeting with a trained therapist, counselor, or primary care provider. If you are having thoughts of suicide or need someone to talk to right now, immediate help is available through the `}<span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("https://www.crisistextline.org/") }}>Crisis Text Line</span> or <span role="button" className="c-b text-underline" onClick={() => { setIsTextPopup("https://suicidepreventionlifeline.org/") }}>Suicide Prevention Hotline</span> Outside the US, you can find international crisis lines <span className="c-b text-underline" role="button" onClick={() => { setIsTextPopup("http://www.suicide.org/international-suicide-hotlines.html") }}>here</span>.</>
                 }
               </ToolPageSubDescription>
             </>
@@ -127,7 +129,7 @@ const ToolsStaticComponent = (props) => {
               }}
             />
           </HorizonatalLine>
-        </Grid>
+        </Grid >
         <Grid item lg={12} md={12} sm={12} xs={12}>
           <ListWithTitle
             title="What to do next"
@@ -138,7 +140,7 @@ const ToolsStaticComponent = (props) => {
           />
         </Grid>
 
-      </Grid>
+      </Grid >
       {
         showPopup &&
         <PopUp setShowPopup={(bool) => { setShowPopup(bool) }} setIsTextPopup={setIsTextPopup} />

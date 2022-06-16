@@ -7,7 +7,7 @@ export const setupAxios = () => {
   // console.log("env", window.DEPLOY_ENV, process.env.NEXT_PUBLIC_API_BASEURL, process.env.NODE_ENV)
   // If the base URL contains DEPLOY_ENV, update with the deployment environment from public/env.js
 
-  console.log("env", process.env);
+  console.log("env", process.env, process.env.API_BASEURL, process.env.NEXT_PUBLIC_API_BASEURL);
   axios.defaults.baseURL = process.env.NEXT_PUBLIC_API_BASEURL.replace(
     "DEPLOY_ENV",
     window.DEPLOY_ENV

@@ -51,7 +51,7 @@ export default function PopUp(props) {
               </div>
 
               <div className="personalized_popup_text">
-                You can also talk with your primary care doctor and/or find therapists through your health coverage. If you don't have health coverage, community behavioral health clinics may be available in your area to provide care.
+                {`You can also talk with your primary care doctor and/or find therapists through your health coverage. If you don't have health coverage, community behavioral health clinics may be available in your area to provide care.`}
               </div>
 
               {/* <a target="_blank" rel="noreferrer" href="https://www.findcbt.org/FAT/">https://www.findcbt.org/FAT/</a><br></br> */}
