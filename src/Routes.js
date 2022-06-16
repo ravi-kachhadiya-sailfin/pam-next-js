@@ -1,0 +1,53 @@
+export const ROUTES = {
+    //Admin Routes
+    admin: '/pamadmin',
+    AdminAccess: '/pamadmin/admins',
+    AssessmentsAndSurvey: '/pamadmin/assessmentsandsurvey',
+    AssessmentDetail: '/pamadmin/assessmentdetail',
+    Dashboard: '/pamadmin/dashboard',
+    ContentAndTools: '/pamadmin/contentandtools',
+    ContentToolDetail: '/pamadmin/contenttooldetail',
+    Users: '/pamadmin/users',
+    UserProfile: '/pamadmin/userprofile',
+    Reports: "/pamadmin/reports",
+
+    // Protected Routes
+    aboutme: '/aboutme',
+    my_progress: '/my-progress',
+    profile: '/profile',
+    reassesment: '/reassesment',
+    recommendation: '/recommendation',
+    reset_password: '/reset_password',
+    understanding_you: '/understanding-you',
+
+    // Common Routes
+    default: '/',
+    faq: '/faq',
+    global_search: "/search/:text",
+    home: ['/', '/home'],
+    maintenance: '/maintenance',
+    privacypolicy: '/privacypolicy',
+    quick_tools: "/quick-tools",
+    special_tools: "/special-tools",
+    team: "/about",
+    tools: '/tools',
+    tools_filter: '/tools/:fid',
+    tool_detail: '/tool-detail',
+    tool_detail_id: '/tool-detail/:id',
+    tnc: '/terms',
+    versionCheck: "/versioncheck",
+
+    // Special Tools Routes
+    fillbucket: "/fillbucket",
+    fillbucket_id: "/fillbucket/:id",
+    flexi: "/flexiblethinking",
+    flexi_id: "/flexiblethinking/:id",
+    gratitude: "/gratitude",
+    gratitude_id: "/gratitude/:id",
+    hindsightBias: "/hindsight-bias",
+    hindsightBias_id: "/hindsight-bias/:id",
+    probsolve: "/find-solution",
+    probsolve_id: "/find-solution/:id",
+    shift_positive: "/shift-positive",
+    shift_positive_id: "/shift-positive/:id",
+};
